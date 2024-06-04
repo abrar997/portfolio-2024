@@ -2,32 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
+.nav-item {
+  border: 2px solid;
+  border-radius: 2px;
+  border-image: repeating-linear-gradient(
+      135deg,
+      #f59bc4 0 10px,
+      #eee 0 20px,
+      #f59bc4 0 30px,
+      #eee 0 20px
     )
-    rgb(var(--background-start-rgb));
+    8;
+  -webkit-mask: conic-gradient(
+        from 180deg at top 4px right 8px,
+        #0000 90deg,
+        #000 0
+      )
+      var(--_i, 200%) 0 /200% var(--_i, 8px) border-box no-repeat,
+    conic-gradient(at bottom 8px left 8px, #0000 90deg, #000 0) 0
+      var(--_i, 200%) / var(--_i, 8px) 200% border-box no-repeat,
+    linear-gradient(#000 0 0) padding-box no-repeat;
+  transition: 0.1s, -webkit-mask-position 0.1s 0.1s;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.nav-item:hover {
+  --_i: 100%;
+  transition: 0.1s, -webkit-mask-size 0.1s 0.1s;
 }
