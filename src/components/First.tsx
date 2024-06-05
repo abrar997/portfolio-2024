@@ -29,7 +29,9 @@ export default function First() {
 
   return (
     <div className="flex flex-col items-center text-center lg:gap-1 gap-1 justify-center text-main h-[200px] lg:h-[400px]">
-      <h2 className="lg:text-2xl text-lg font-main font-title">Hello I'm, </h2>
+      <h2 className="lg:text-2xl text-lg font-main font-title">
+        Hello I&apos;m,{" "}
+      </h2>
       <div className="font-main font-title text-primary">
         {showFirst ? (
           <motion.p
