@@ -70,9 +70,9 @@ export default function First() {
 
       <p className="text-slate-300 lg:text-lg text-sm lg:w-[60%]">
         I have experience over 2 years and i specialize in HTML, CSS, and
-        JavaScript, I'm proficient with frameworks like React with typescript
-        and JavaScript. My focus is on building user-friendly, accessible, and
-        visually appealing websites.
+        JavaScript, I&apos;m proficient with frameworks like React with
+        typescript and JavaScript. My focus is on building user-friendly,
+        accessible, and visually appealing websites.
       </p>
     </div>
   );
