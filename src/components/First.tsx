@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { GiButterflyFlower } from "react-icons/gi";
 
 export default function First() {
   const [showFirst, setShowFirst] = useState(true);
@@ -30,7 +29,7 @@ export default function First() {
   return (
     <div className="flex flex-col items-center text-center lg:gap-1 gap-1 justify-center text-main h-[200px] lg:h-[400px]">
       <h2 className="lg:text-2xl text-lg font-main font-title">
-        Hello I&apos;m,{" "}
+        Hello I&#39;m,
       </h2>
       <div className="font-main font-title text-primary">
         {showFirst ? (
@@ -72,7 +71,7 @@ export default function First() {
 
       <p className="text-slate-300 lg:text-lg text-sm lg:w-[60%]">
         I have experience over 2 years and i specialize in HTML, CSS, and
-        JavaScript, I&apos;m proficient with frameworks like React with
+        JavaScript, I&#39;m proficient with frameworks like React with
         typescript and JavaScript. My focus is on building user-friendly,
         accessible, and visually appealing websites.
       </p>
