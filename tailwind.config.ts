@@ -15,6 +15,10 @@ const config: Config = {
         main: "#eee",
         primary: "#f59bc4",
       },
+      fontFamily: {
+        primary: "Merriweather",
+        title: "Playfair",
+      },
     },
   },
   plugins: [],
