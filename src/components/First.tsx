@@ -77,7 +77,7 @@ export default function First() {
       </p>
       <div className="flex gap-2 mt-4 text-lg">
         <button className="border hover:bg-opacity-75 transition-all duration-300 hover:bg-transparent hover:text-main text-black bg-primary border-primary rounded px-3 py-1">
-          Let's talk
+          LetI&#39;s talk
         </button>
 
         <button className="border hover:bg-opacity-75 transition-all duration-300 hover:bg-transparent hover:text-main flex items-center gap-2 text-black bg-primary border-primary rounded px-3 py-1">
