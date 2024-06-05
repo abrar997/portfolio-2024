@@ -20,7 +20,7 @@ export default function Header() {
     <motion.div className="font-title border-b border-[#8080804e]">
       <div className="font-secondary  text-main lg:px-12 lg:py-6 p-4 pb-1 flex justify-between items-center">
         <Link href="/" className="flex text-2xl lg:text-4xl items-start">
-          A{" "}
+          A
           <GiButterflyFlower className="text-primary lg:text-3xl lg:-ml-0.5" />
         </Link>
         <div className="lg:flex gap-3 hidden lg:text-lg">
