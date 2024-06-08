@@ -26,8 +26,8 @@ export default function Experience(props: ExperienceData) {
             key={item.id}
             className="border border-gray-500 flex flex-col gap-2 bg-main lg:min-h-[350px] rounded p-4 text-opacity-85 text-text"
           >
-            <h1 className="flex gap-1 border-b pb-2 border-b-gray-600 tracking-wide text-xl text-main font-primary items-center">
-              <BsFlower3 className="text-xl text-primary" />{" "}
+            <h1 className="flex gap-1 border-b pb-2 border-b-gray-600 tracking-wide lg:text-xl text-main font-primary items-center">
+              <BsFlower3 className="text-primary" />
               <span>{item.for}</span>,<span>{item.city}</span>
             </h1>
             <div className="flex gap-1 capitalize text-sm items-center">

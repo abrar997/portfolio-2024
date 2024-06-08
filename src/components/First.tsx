@@ -28,7 +28,7 @@ export default function First() {
       );
 
   return (
-    <div className="flex flex-col lg:items-center lg:text-center lg:gap-1 gap-1 justify-center text-main lg:h-[400px] py-12 lg:py-0">
+    <div className="flex flex-col lg:items-center lg:text-center lg:gap-1 gap-1 justify-center text-main lg:h-[400px] pt-6 lg:py-0">
       <h2 className="lg:text-2xl text-lg font-main font-title">
         Hello I&#39;m,
       </h2>
