@@ -21,39 +21,43 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
   return (
     <div className="lg:bg-main grid gap-3 lg:gap-6 rounded lg:shadow-lg lg:p-4 py-8 lg:px-40 overflow-hidden">
       <Title subtitle="what skills i have" title="Skills" />
-      <div className="grid lg:grid-cols-2 gap-4 lg:gap-12 lg:items-start overflow-hidden text-text">
+      <div className="grid lg:grid-cols-3 gap-4 lg:gap-12 lg:items-start overflow-hidden text-text">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeIn" }}
-          className={DivProps}
+          // className={DivProps}
+          className="grid text-center"
         >
           <TitleSkill
             icon={<CgWebsite className="text-primary text-sm lg:text-lg" />}
             text="Frontend Development"
           />
-          <ul className={ulProps}>
-            {frontend.map((item) => (
-              <li key={item.id} className={liProps}>
-                <BsDot /> {item.name}
-              </li>
-            ))}
-          </ul>
+          <div className="border py-2 rounded-tl-none border-t-0 rounded-xl border-slate-600">
+            <ul className={ulProps}>
+              {frontend.map((item) => (
+                <li key={item.id} className={liProps}>
+                  <BsDot /> {item.name}
+                </li>
+              ))}
+            </ul>
+          </div>
         </motion.div>
-        <div className="grid grid-rows-2 gap-4">
-          <motion.div
-            initial={{ y: 80 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeIn" }}
-            className={DivProps}
-          >
-            <TitleSkill
-              icon={
-                <LiaAmericanSignLanguageInterpretingSolid className="text-primary text-2xl" />
-              }
-              text="Programming Languages"
-            />
+        <motion.div
+          initial={{ y: 80 }}
+          whileInView={{ y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          // className={DivProps}
+          className="grid gap-2"
+        >
+          <TitleSkill
+            icon={
+              <LiaAmericanSignLanguageInterpretingSolid className="text-primary text-2xl" />
+            }
+            text="Programming Languages"
+          />
+          <div className="border rounded-tl-none min-h-[230px] border-t-0 rounded-xl border-slate-600">
             <ul className={ulProps}>
               {language.map((item) => (
                 <li key={item.id} className={liProps}>
@@ -61,18 +65,21 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
                 </li>
               ))}
             </ul>
-          </motion.div>
-          <motion.div
-            initial={{ y: 80 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, ease: "easeIn" }}
-            className={DivProps}
-          >
-            <TitleSkill
-              icon={<TbToolsOff className="text-primary text-sm lg:text-lg" />}
-              text="Tools"
-            />
+          </div>{" "}
+        </motion.div>
+        <motion.div
+          initial={{ y: 80 }}
+          whileInView={{ y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          // className={DivProps}
+          className="grid gap-2"
+        >
+          <TitleSkill
+            icon={<TbToolsOff className="text-primary text-sm lg:text-lg" />}
+            text="Tools"
+          />
+          <div className="border rounded-tl-none min-h-[230px] border-t-0 rounded-xl border-slate-600">
             <ul className={ulProps}>
               {tools.map((item) => (
                 <li key={item.id} className={liProps}>
@@ -80,8 +87,8 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
                 </li>
               ))}
             </ul>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
@@ -90,7 +97,7 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
 const TitleSkill = ({ text, icon }: { text: string; icon: any }) => {
   return (
     <div>
-      <h1 className="text-xl border-b flex lg:pb-2 pb-1 gap-2 items-center border-gray-600 font-primary">
+      <h1 className="text-xl flex gap-2 items-center border-gray-600 font-primary">
         {icon}
         {text}
       </h1>

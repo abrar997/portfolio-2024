@@ -13,7 +13,7 @@ const config: Config = {
       },
       colors: {
         main: "#eee",
-        primary: "#f59bc4",
+        primary: "#ff66ab",
         text: "#cbd5e1",
       },
       fontFamily: {

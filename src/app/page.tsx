@@ -109,7 +109,7 @@ export default function Home() {
           backgroundImage: "url('/assets/bg.png')",
           backgroundSize: "6px",
         }}
-        className="lg:p-12 grid lg:gap-20 gap-6 p-4"
+        className="lg:p-12 grid lg:gap-20 gap-6 p-4 text-[#ff66ab]"
       >
         <First />
         <Skills
