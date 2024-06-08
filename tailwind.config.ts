@@ -14,6 +14,7 @@ const config: Config = {
       colors: {
         main: "#eee",
         primary: "#f59bc4",
+        text: "#cbd5e1",
       },
       fontFamily: {
         primary: "Merriweather",

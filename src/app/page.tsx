@@ -31,6 +31,75 @@ const SkillsData = {
   ],
 };
 
+const experienceData = [
+  {
+    id: 1,
+    for: "Plly",
+    city: "Manila",
+    job: "Frontend",
+    type: "remotely",
+    date: "2022-Aug / 2023-Nov",
+    responsibilities: [
+      {
+        id: 1,
+        item: "Developed a dynamic website builder's front-end using React.js, focusing on responsiveness and user-friendliness.",
+      },
+      {
+        id: 2,
+        item: "Create components to different categories.",
+      },
+      { id: 3, item: "Design templates by using components." },
+      {
+        id: 4,
+        item: "Design 3d components by using 3d models and fix it by blinder app then develop it.",
+      },
+    ],
+    skillsUsed:
+      "React js , tailwind css , framer motion , headless UI , Babylon js , Next js, Figma ,Swiper JS, clsx , react-hook-form , css , Blind",
+  },
+  {
+    id: 2,
+    for: "Techboom",
+    city: "Manila",
+    job: "Frontend",
+    type: "remotely",
+    date: "2022-Aug / 2023-Nov",
+    responsibilities: [
+      {
+        id: 1,
+        item: "Developed a dynamic website builder's front-end using React.js, focusing on responsiveness and user-friendliness.",
+      },
+      {
+        id: 2,
+        item: "Update editor page , components and develop templates as websites",
+      },
+    ],
+    skillsUsed:
+      "React js , tailwind css , framer motion , headless UI , react-hook-form , css",
+  },
+  {
+    id: 3,
+    for: "Accommodation Network",
+    city: "New York",
+    job: "Frontend",
+    type: "remotely",
+    date: "2022-Aug / 2023-Nov",
+    link: "https://www.accommodation.network/",
+    responsibilities: [
+      {
+        id: 1,
+        item: "Frontend developer for this website  ",
+      },
+      {
+        id: 2,
+        item: "update UI design and check it with customer",
+      },
+    ],
+    skillsUsed:
+      "Next JS , framer motion ,react icons , react scroll , react-spinners",
+  },
+];
+
 export default function Home() {
   return (
     <div className="bg-main text-main font-sans">
@@ -48,7 +117,7 @@ export default function Home() {
           tools={SkillsData.Tools}
           language={SkillsData.language}
         />
-        <Experience />
+        <Experience data={experienceData} />
         <Projects />
         <Contact />
       </div>

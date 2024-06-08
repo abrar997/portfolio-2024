@@ -28,7 +28,7 @@ export default function First() {
       );
 
   return (
-    <div className="flex flex-col items-center text-center lg:gap-1 gap-1 justify-center text-main h-[200px] lg:h-[500px]">
+    <div className="flex flex-col lg:items-center lg:text-center lg:gap-1 gap-1 justify-center text-main lg:h-[400px] py-12 lg:py-0">
       <h2 className="lg:text-2xl text-lg font-main font-title">
         Hello I&#39;m,
       </h2>
@@ -69,13 +69,13 @@ export default function First() {
           </motion.p>
         )}
       </div>
-      <p className="text-slate-300 lg:text-[16px] text-sm lg:w-[60%]">
+      <p className="text-text lg:text-[16px] text-sm lg:w-[60%]">
         I have experience over 2 years and i specialize in HTML, CSS, and
         JavaScript, I&#39;m proficient with frameworks like React with
         typescript and JavaScript. My focus is on building user-friendly,
         accessible, and visually appealing websites.
       </p>
-      <div className="flex gap-2 mt-4 text-lg">
+      <div className="flex gap-2 mt-4 lg:text-lg">
         <button className="border hover:bg-opacity-75 transition-all duration-300 hover:bg-transparent hover:text-main text-black bg-primary border-primary rounded px-3 py-1">
           LetI&#39;s talk
         </button>
