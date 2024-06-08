@@ -13,8 +13,8 @@ interface SkillsProps {
   tools: { id: number; name: string }[];
 }
 export default function Skills({ frontend, language, tools }: SkillsProps) {
-  const DivProps =
-    "border rounded p-4 lg:bg-transparent bg-main flex flex-col gap-1 h-full gap-3 border-gray-500 hover:shadow-xl transition-all duration-300";
+  // const DivProps =
+  //   "border rounded p-4 lg:bg-transparent bg-main flex flex-col gap-1 h-full gap-3 border-gray-500 hover:shadow-xl transition-all duration-300";
   const ulProps = "gap-1 grid";
   const liProps = "flex gap-1 items-center";
 
@@ -26,7 +26,6 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeIn" }}
-          // className={DivProps}
           className="grid text-center"
         >
           <TitleSkill
@@ -48,7 +47,6 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, ease: "easeIn" }}
-          // className={DivProps}
           className="grid gap-2"
         >
           <TitleSkill
@@ -57,7 +55,7 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
             }
             text="Programming Languages"
           />
-          <div className="border rounded-tl-none min-h-[230px] border-t-0 rounded-xl border-slate-600">
+          <div className="border rounded-tl-none py-2 lg:min-h-[230px] border-t-0 rounded-xl border-slate-600">
             <ul className={ulProps}>
               {language.map((item) => (
                 <li key={item.id} className={liProps}>
@@ -72,14 +70,13 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           whileInView={{ y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3, ease: "easeIn" }}
-          // className={DivProps}
           className="grid gap-2"
         >
           <TitleSkill
             icon={<TbToolsOff className="text-primary text-sm lg:text-lg" />}
             text="Tools"
           />
-          <div className="border rounded-tl-none min-h-[230px] border-t-0 rounded-xl border-slate-600">
+          <div className="border rounded-tl-none py-2 lg:min-h-[230px] border-t-0 rounded-xl border-slate-600">
             <ul className={ulProps}>
               {tools.map((item) => (
                 <li key={item.id} className={liProps}>
