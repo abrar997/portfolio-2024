@@ -13,13 +13,11 @@ interface SkillsProps {
   tools: { id: number; name: string }[];
 }
 export default function Skills({ frontend, language, tools }: SkillsProps) {
-  // const DivProps =
-  //   "border rounded p-4 lg:bg-transparent bg-main flex flex-col gap-1 h-full gap-3 border-gray-500 hover:shadow-xl transition-all duration-300";
   const ulProps = "gap-1 grid";
   const liProps = "flex gap-1 items-center";
 
   return (
-    <div className="lg:bg-main grid gap-3 lg:gap-6 rounded lg:shadow-lg lg:p-4 py-8 lg:py-12 lg:px-40 overflow-hidden">
+    <div className="lg:bg-[#222222] lg:mx-2 grid gap-3 lg:gap-6 rounded lg:shadow-lg lg:py-12 lg:px-40 overflow-hidden">
       <Title subtitle="what skills i have" title="Skills" />
       <div className="grid lg:grid-cols-3 gap-4 lg:gap-12 lg:items-start overflow-hidden text-text">
         <motion.div

@@ -5,6 +5,7 @@ import { GiButterflyFlower } from "react-icons/gi";
 import { BiMenu } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { CgClose } from "react-icons/cg";
+
 const menu = [
   { id: 1, title: "home", ref: "/" },
   { id: 2, title: "about", ref: "/" },

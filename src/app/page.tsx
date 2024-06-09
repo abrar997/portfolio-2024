@@ -105,9 +105,9 @@ const projects = [
     id: 1,
     title: "3D Portfolio",
     url: "./assets/port.png",
-    skillsUsed: "Next js , Babylon js , tailwind css , typescript",
-    github: "",
-    demo: "",
+    skillsUsed: "Next js , babylon js , tailwind css , typescript",
+    github: "https://github.com/abrar997/3d-first",
+    demo: "https://3d-first.vercel.app/",
   },
   {
     id: 2,
@@ -115,40 +115,40 @@ const projects = [
     url: "./assets/FA.png",
     skillsUsed:
       "Next js , Babylon js , tailwind css , typescript,Framer-motion",
-    github: "",
-    demo: "",
+    github: "https://github.com/abrar997/3d-project2",
+    demo: "https://3d-project2.vercel.app/",
   },
   {
     id: 3,
     title: "Restaurant",
     url: "./assets/rest.png",
-    skillsUsed: "",
-    github: "",
-    demo: "",
+    skillsUsed: "React js , css , react-snippers",
+    github: "https://github.com/abrar997/RESTURANT-ME",
+    demo: "https://sweet-praline-474c1a.netlify.app/#home",
   },
   {
     id: 4,
     title: "Accommodation Network",
     url: "./assets/tech.png",
-    skillsUsed: "",
-    github: "",
-    demo: "",
+    skillsUsed:
+      "Next js ,tailwind css , typescript , framer-motion , headless UI , react-scroll , react-spinners",
+    demo: "https://www.accommodation.network/",
   },
   {
     id: 5,
-    title: "",
-    url: "./assets/admin.png",
-    skillsUsed: "",
-    github: "",
+    title: "Portfolio",
+    url: "./assets/port2.png",
+    skillsUsed: "React js , css , tailwind css , framer-motion , ",
+    github: "https://github.com/abrar997/test",
     demo: "",
   },
   {
     id: 6,
-    title: "",
-    url: "./assets/insta.png",
-    skillsUsed: "",
-    github: "",
-    demo: "",
+    title: "Admin dashboard template",
+    url: "./assets/admin.png",
+    skillsUsed: "React js , axios , firebase , bootstrap5",
+    github: "https://github.com/abrar997/Admin-dashboard-MEE",
+    demo: "https://funny-maamoul-5e654c.netlify.app/",
   },
 ];
 export default function Home() {
@@ -160,7 +160,7 @@ export default function Home() {
           backgroundImage: "url('/assets/bg.png')",
           backgroundSize: "6px",
         }}
-        className="lg:p-12 grid lg:gap-20 gap-6 p-4"
+        className="lg:p-12 grid lg:gap-20 gap-12 p-4"
       >
         <First />
         <Skills
