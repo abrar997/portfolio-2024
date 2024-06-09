@@ -17,8 +17,7 @@ const config: Config = {
         text: "#cbd5e1",
       },
       fontFamily: {
-        primary: "Merriweather",
-        title: "Playfair",
+        primary: '"Playfair Display", serif',
       },
     },
   },

@@ -8,7 +8,7 @@ export default function First() {
 
   useEffect(() => {
     const timer = setTimeout(() => setShowFirst(false), 3000);
-    const returnTimer = setTimeout(() => setShowFirst(true), 9000);
+    const returnTimer = setTimeout(() => setShowFirst(true), 3000);
     return () => {
       clearTimeout(timer);
       clearTimeout(returnTimer);
@@ -29,10 +29,10 @@ export default function First() {
 
   return (
     <div className="flex flex-col lg:items-center lg:text-center lg:gap-1 gap-1 justify-center text-main lg:h-[400px] pt-6 lg:py-0">
-      <h2 className="lg:text-2xl text-lg font-main font-title">
+      <h2 className="lg:text-2xl text-lg font-main font-primary">
         Hello I&#39;m,
       </h2>
-      <div className="font-main font-title text-primary overflow-hidden">
+      <div className="font-main font-primary text-primary overflow-hidden">
         <AnimatePresence mode="wait">
           {showFirst ? (
             <motion.p
@@ -48,7 +48,7 @@ export default function First() {
                   initial={{ y: "-200px" }}
                   animate={{ y: 0 }}
                   exit={{ y: "200px" }}
-                  transition={{ duration: 0.5, delay: i / 10 }}
+                  transition={{ duration: 0.6, delay: i / 10 }}
                 >
                   {item === " " ? "\u00A0" : item}
                 </motion.span>
@@ -68,7 +68,7 @@ export default function First() {
                   initial={{ y: "-200px" }}
                   animate={{ y: 0 }}
                   exit={{ y: "200px" }}
-                  transition={{ duration: 0.5, delay: i / 10 }}
+                  transition={{ duration: 0.6, delay: i / 10 }}
                 >
                   {item === " " ? "\u00A0" : item}
                 </motion.span>
