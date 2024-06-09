@@ -100,6 +100,57 @@ const experienceData = [
   },
 ];
 
+const projects = [
+  {
+    id: 1,
+    title: "3D Portfolio",
+    url: "./assets/port.png",
+    skillsUsed: "Next js , Babylon js , tailwind css , typescript",
+    github: "",
+    demo: "",
+  },
+  {
+    id: 2,
+    title: "FA nursery",
+    url: "./assets/FA.png",
+    skillsUsed:
+      "Next js , Babylon js , tailwind css , typescript,Framer-motion",
+    github: "",
+    demo: "",
+  },
+  {
+    id: 3,
+    title: "Restaurant",
+    url: "./assets/rest.png",
+    skillsUsed: "",
+    github: "",
+    demo: "",
+  },
+  {
+    id: 4,
+    title: "Accommodation Network",
+    url: "./assets/tech.png",
+    skillsUsed: "",
+    github: "",
+    demo: "",
+  },
+  {
+    id: 5,
+    title: "",
+    url: "./assets/admin.png",
+    skillsUsed: "",
+    github: "",
+    demo: "",
+  },
+  {
+    id: 6,
+    title: "",
+    url: "./assets/insta.png",
+    skillsUsed: "",
+    github: "",
+    demo: "",
+  },
+];
 export default function Home() {
   return (
     <div className="bg-main text-main font-sans">
@@ -109,7 +160,7 @@ export default function Home() {
           backgroundImage: "url('/assets/bg.png')",
           backgroundSize: "6px",
         }}
-        className="lg:p-12 grid lg:gap-20 gap-6 p-4 text-[#ff66ab]"
+        className="lg:p-12 grid lg:gap-20 gap-6 p-4"
       >
         <First />
         <Skills
@@ -118,7 +169,7 @@ export default function Home() {
           language={SkillsData.language}
         />
         <Experience data={experienceData} />
-        <Projects />
+        <Projects data={projects} />
         <Contact />
       </div>
     </div>

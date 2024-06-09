@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { BiDownload } from "react-icons/bi";
 
 export default function First() {
@@ -8,7 +8,7 @@ export default function First() {
 
   useEffect(() => {
     const timer = setTimeout(() => setShowFirst(false), 3000);
-    const returnTimer = setTimeout(() => setShowFirst(true), 10000);
+    const returnTimer = setTimeout(() => setShowFirst(true), 9000);
     return () => {
       clearTimeout(timer);
       clearTimeout(returnTimer);
@@ -32,42 +32,50 @@ export default function First() {
       <h2 className="lg:text-2xl text-lg font-main font-title">
         Hello I&#39;m,
       </h2>
-      <div className="font-main font-title text-primary">
-        {showFirst ? (
-          <motion.p
-            key={texts[0].id}
-            className="text-3xl lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
-          >
-            {SplitText(texts[0].text).map((item, i) => (
-              <motion.span
-                key={i}
-                initial={{ y: "-200px" }}
-                animate={{ y: 0 }}
-                exit={{ opacity: 0, y: "-200px" }}
-                transition={{ duration: 0.5, delay: i / 10 }}
-              >
-                {item === " " ? "\u00A0" : item}
-              </motion.span>
-            ))}
-          </motion.p>
-        ) : (
-          <motion.p
-            key={texts[1].id}
-            className="text-3xl lg:text-6xl font-bold font-main font-secondary text-primary overflow-hidden"
-          >
-            {SplitText(texts[1].text).map((item, i) => (
-              <motion.span
-                key={i}
-                initial={{ y: "200px" }}
-                animate={{ y: 0 }}
-                exit={{ opacity: 0, y: "200px" }}
-                transition={{ duration: 0.5, delay: i / 10 }}
-              >
-                {item === " " ? "\u00A0" : item}
-              </motion.span>
-            ))}
-          </motion.p>
-        )}
+      <div className="font-main font-title text-primary overflow-hidden">
+        <AnimatePresence mode="wait">
+          {showFirst ? (
+            <motion.p
+              key={texts[0].id}
+              initial={{ y: "-200px" }}
+              animate={{ y: 0 }}
+              exit={{ y: "200px" }}
+              className="text-3xl lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
+            >
+              {SplitText(texts[0].text).map((item, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ y: "-200px" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "200px" }}
+                  transition={{ duration: 0.5, delay: i / 10 }}
+                >
+                  {item === " " ? "\u00A0" : item}
+                </motion.span>
+              ))}
+            </motion.p>
+          ) : (
+            <motion.p
+              key={texts[1].id}
+              initial={{ y: "-200px" }}
+              animate={{ y: 0 }}
+              exit={{ y: "200px" }}
+              className="text-3xl lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
+            >
+              {SplitText(texts[1].text).map((item, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ y: "-200px" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "200px" }}
+                  transition={{ duration: 0.5, delay: i / 10 }}
+                >
+                  {item === " " ? "\u00A0" : item}
+                </motion.span>
+              ))}
+            </motion.p>
+          )}
+        </AnimatePresence>
       </div>
       <p className="text-text lg:text-[16px] text-sm lg:w-[60%]">
         I have experience over 2 years and i specialize in HTML, CSS, and

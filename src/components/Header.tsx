@@ -7,11 +7,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 const menu = [
   { id: 1, title: "home", ref: "/" },
-  { id: 1, title: "about", ref: "/" },
-  { id: 1, title: "skills", ref: "/" },
-  { id: 1, title: "experience", ref: "/" },
-  { id: 1, title: "gallery", ref: "/" },
-  { id: 1, title: "contact", ref: "/" },
+  { id: 2, title: "about", ref: "/" },
+  { id: 3, title: "skills", ref: "/" },
+  { id: 4, title: "experience", ref: "/" },
+  { id: 5, title: "gallery", ref: "/" },
+  { id: 6, title: "contact", ref: "/" },
 ];
 
 export default function Header() {

@@ -19,20 +19,20 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
   const liProps = "flex gap-1 items-center";
 
   return (
-    <div className="lg:bg-main grid gap-3 lg:gap-6 rounded lg:shadow-lg lg:p-4 py-8 lg:px-40 overflow-hidden">
+    <div className="lg:bg-main grid gap-3 lg:gap-6 rounded lg:shadow-lg lg:p-4 py-8 lg:py-12 lg:px-40 overflow-hidden">
       <Title subtitle="what skills i have" title="Skills" />
       <div className="grid lg:grid-cols-3 gap-4 lg:gap-12 lg:items-start overflow-hidden text-text">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.3, ease: "easeIn" }}
+          initial={{ x: 30 }}
+          whileInView={{ x: 0 }}
+          transition={{ duration: 0.5 }}
           className="grid text-center"
         >
           <TitleSkill
             icon={<CgWebsite className="text-primary text-sm lg:text-lg" />}
             text="Frontend Development"
           />
-          <div className="border py-2 rounded-tl-none border-t-0 rounded-xl border-slate-600">
+          <div className="border py-2 rounded-tl-none border-t-0 rounded-xl border-gray-500">
             <ul className={ulProps}>
               {frontend.map((item) => (
                 <li key={item.id} className={liProps}>
@@ -43,10 +43,9 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           </div>
         </motion.div>
         <motion.div
-          initial={{ y: 80 }}
+          initial={{ y: 50 }}
           whileInView={{ y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeIn" }}
+          transition={{ duration: 0.5 }}
           className="grid gap-2"
         >
           <TitleSkill
@@ -55,7 +54,7 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
             }
             text="Programming Languages"
           />
-          <div className="border rounded-tl-none py-2 lg:min-h-[230px] border-t-0 rounded-xl border-slate-600">
+          <div className="border rounded-tl-none py-2 lg:min-h-[230px] border-t-0 rounded-xl border-gray-500">
             <ul className={ulProps}>
               {language.map((item) => (
                 <li key={item.id} className={liProps}>
@@ -63,20 +62,19 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
                 </li>
               ))}
             </ul>
-          </div>{" "}
+          </div>
         </motion.div>
         <motion.div
-          initial={{ y: 80 }}
-          whileInView={{ y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3, ease: "easeIn" }}
+          initial={{ x: 50 }}
+          whileInView={{ x: 0 }}
+          transition={{ duration: 0.5 }}
           className="grid gap-2"
         >
           <TitleSkill
             icon={<TbToolsOff className="text-primary text-sm lg:text-lg" />}
             text="Tools"
           />
-          <div className="border rounded-tl-none py-2 lg:min-h-[230px] border-t-0 rounded-xl border-slate-600">
+          <div className="border rounded-tl-none py-2 lg:min-h-[230px] border-t-0 rounded-xl border-gray-500">
             <ul className={ulProps}>
               {tools.map((item) => (
                 <li key={item.id} className={liProps}>

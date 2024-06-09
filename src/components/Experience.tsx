@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import Title from "./reusable/Title";
 import { BsDash, BsDot, BsFlower3, BsLink } from "react-icons/bs";
 import { FaLeaf } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 interface ExperienceData {
   data: {
@@ -18,12 +20,15 @@ interface ExperienceData {
 
 export default function Experience(props: ExperienceData) {
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-3 lg:gap-6">
       <Title subtitle="my journey with frontend" title="Experience" />
-      <div className="grid lg:grid-cols-3 lg:items-start gap-4 lg:gap-6 lg:px-4">
-        {props.data.map((item) => (
-          <div
-            key={item.id}
+      <div className="grid lg:grid-cols-3 lg:items-start gap-4 lg:gap-6 lg:px-4 overflow-hidden">
+        {props.data.map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ y: 90 }}
+            whileInView={{ y: 0 }}
+            transition={{ duration: i * 0.3 }}
             className="border border-gray-500 flex flex-col gap-2 bg-main lg:min-h-[350px] rounded p-4 text-opacity-85 text-text"
           >
             <h1 className="flex gap-1 border-b pb-2 border-b-gray-600 tracking-wide lg:text-xl text-main font-primary items-center">
@@ -61,7 +66,7 @@ export default function Experience(props: ExperienceData) {
                 </span>
               </a>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
