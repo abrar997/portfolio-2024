@@ -20,7 +20,7 @@ interface ExperienceData {
 
 export default function Experience(props: ExperienceData) {
   return (
-    <div className="grid gap-3 lg:gap-6">
+    <div className="grid gap-3 lg:gap-12">
       <Title subtitle="my journey with frontend" title="Experience" />
       <div className="grid lg:grid-cols-3 lg:items-start gap-4 lg:gap-6 lg:px-4 overflow-hidden">
         {props.data.map((item, i) => (

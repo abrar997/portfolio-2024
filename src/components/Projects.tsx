@@ -16,7 +16,7 @@ interface ProjectsData {
 
 export default function Projects(props: ProjectsData) {
   return (
-    <div className="grid gap-3 lg:gap-6">
+    <div className="grid gap-3 lg:gap-12">
       <Title subtitle="welcome in my galley" title="Projects" />
       <div className="grid lg:grid-cols-3 lg:gap-6 gap-4 lg:px-4">
         {props.data.map((item, i) => (
