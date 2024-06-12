@@ -7,8 +7,8 @@ export default function First() {
   const [showFirst, setShowFirst] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowFirst(false), 3000);
-    const returnTimer = setTimeout(() => setShowFirst(true), 9000);
+    const timer = setTimeout(() => setShowFirst(false), 4000);
+    const returnTimer = setTimeout(() => setShowFirst(true), 10000);
     return () => {
       clearTimeout(timer);
       clearTimeout(returnTimer);
@@ -40,7 +40,7 @@ export default function First() {
               initial={{ y: "-200px" }}
               animate={{ y: 0 }}
               exit={{ y: "200px" }}
-              className="text-3xl lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
+              className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
             >
               {SplitText(texts[0].text).map((item, i) => (
                 <motion.span
@@ -48,7 +48,7 @@ export default function First() {
                   initial={{ y: "-200px" }}
                   animate={{ y: 0 }}
                   exit={{ y: "200px" }}
-                  transition={{ duration: 0.6, delay: i / 10 }}
+                  transition={{ duration: 0.7, delay: i / 10.5 }}
                 >
                   {item === " " ? "\u00A0" : item}
                 </motion.span>
@@ -60,7 +60,7 @@ export default function First() {
               initial={{ y: "-200px" }}
               animate={{ y: 0 }}
               exit={{ y: "200px" }}
-              className="text-3xl lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
+              className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
             >
               {SplitText(texts[1].text).map((item, i) => (
                 <motion.span
@@ -68,7 +68,7 @@ export default function First() {
                   initial={{ y: "-200px" }}
                   animate={{ y: 0 }}
                   exit={{ y: "200px" }}
-                  transition={{ duration: 0.6, delay: i / 10 }}
+                  transition={{ duration: 0.7, delay: i / 10.5 }}
                 >
                   {item === " " ? "\u00A0" : item}
                 </motion.span>
