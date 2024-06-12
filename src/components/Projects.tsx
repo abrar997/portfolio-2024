@@ -24,6 +24,7 @@ export default function Projects(props: ProjectsData) {
             initial={{ y: 50 }}
             whileInView={{ y: 0 }}
             transition={{ duration: 0.5, delay: i / 10 }}
+            viewport={{ once: true }}
             key={item.id}
             className="grid p-2 lg:p-4 gap-4 rounded border border-gray-500 hover:border-gray-400 transition-all duration-300 bg-main"
           >

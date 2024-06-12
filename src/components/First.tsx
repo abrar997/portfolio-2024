@@ -8,7 +8,7 @@ export default function First() {
 
   useEffect(() => {
     const timer = setTimeout(() => setShowFirst(false), 3000);
-    const returnTimer = setTimeout(() => setShowFirst(true), 3000);
+    const returnTimer = setTimeout(() => setShowFirst(true), 9000);
     return () => {
       clearTimeout(timer);
       clearTimeout(returnTimer);

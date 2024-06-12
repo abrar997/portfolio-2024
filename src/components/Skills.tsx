@@ -24,6 +24,7 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           initial={{ x: 30 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="grid text-center"
         >
           <TitleSkill
@@ -44,6 +45,7 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           initial={{ y: 50 }}
           whileInView={{ y: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="grid gap-2"
         >
           <TitleSkill
@@ -66,6 +68,7 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
           initial={{ x: 50 }}
           whileInView={{ x: 0 }}
           transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
           className="grid gap-2"
         >
           <TitleSkill

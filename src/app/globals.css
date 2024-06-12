@@ -9,10 +9,10 @@
   border-radius: 2px;
   border-image: repeating-linear-gradient(
       135deg,
-      #f59bc4 0 20px,
-      #eee 0 10px,
-      #f59bc4 0 30px,
-      #eee 0 40px
+      #ff66ab 0 20px,
+      #ff66ab 0 10px,
+      #ff66ab 0 30px,
+      #ff66ab 0 40px
     )
     8;
   -webkit-mask: conic-gradient(

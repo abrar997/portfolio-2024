@@ -18,7 +18,7 @@ const menu = [
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <motion.div className="font-title border-b border-[#8080804e]">
+    <motion.div className="font-primary border-b border-[#8080804e]">
       <div className="font-secondary  text-main lg:px-12 lg:py-6 p-4 pb-1 flex justify-between items-center">
         <Link href="/" className="flex text-2xl lg:text-4xl items-start">
           A
