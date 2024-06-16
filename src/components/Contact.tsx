@@ -4,9 +4,19 @@ import { GiButterflyFlower } from "react-icons/gi";
 import { BiRightArrow } from "react-icons/bi";
 
 const social = [
-  { id: 1, title: "Email", url: "", text: "abraralrawi997@gmail.com" },
-  { id: 2, title: "Phone", url: "", text: "+9647831190254" },
-  { id: 3, title: "Github", url: "", text: "Abrar Muthana" },
+  {
+    id: 1,
+    title: "email",
+    url: "abraralrawi997@gmail.com",
+    text: "abraralrawi997@gmail.com",
+  },
+  { id: 2, title: "phone", url: "9647831190254", text: "+9647831190254" },
+  {
+    id: 3,
+    title: "github",
+    url: "https://github.com/abrar997",
+    text: "Abrar Muthana",
+  },
 ];
 
 const inputs = [
@@ -45,7 +55,7 @@ export default function Contact() {
     <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
       <Title subtitle="send us a message" title="Contact us" />
       <div className="grid lg:grid-cols-2 lg:gap-12 gap-3">
-        <div className="grid lg:gap-8 lg:py-16">
+        <div className="grid lg:gap-8 gap-4 lg:py-16">
           <h1 className="text-text flex gap-3">
             <span className="hidden lg:flex">
               <GiButterflyFlower className="lg:text-5xl text-primary" />
@@ -62,11 +72,40 @@ export default function Contact() {
             <ul className="grid gap-2 text-sm">
               {social.map((item) => (
                 <li key={item.id} className="grid">
-                  <a href={item.url} className="flex gap-1">
-                    <span className="text-text">{item.title}</span>
-                    <span>:</span>
-                    <span>{item.text}</span>
-                  </a>
+                  {item.title === "email" && (
+                    <a
+                      href={`mailto:${item.url}`}
+                      target="_blank"
+                      className="flex gap-1"
+                    >
+                      <span className="text-text capitalize">{item.title}</span>
+                      <span>:</span>
+                      <span>{item.text}</span>
+                    </a>
+                  )}
+                  {item.title === "phone" && (
+                    <a
+                      href={`https://api.whatsapp.com/send?phone=${item.url}`}
+                      target="_blank"
+                      className="flex gap-1"
+                    >
+                      <span className="text-text capitalize">{item.title}</span>
+                      <span>:</span>
+                      <span>{item.text}</span>
+                    </a>
+                  )}
+
+                  {item.title === "github" && (
+                    <a
+                      href={`${item.url}`}
+                      target="_blank"
+                      className="flex gap-1"
+                    >
+                      <span className="text-text capitalize">{item.title}</span>
+                      <span>:</span>
+                      <span>{item.text}</span>
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

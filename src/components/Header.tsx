@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 
 const menu = [
-  { id: 1, title: "home", to: "" },
+  { id: 1, title: "home", to: "/" },
   { id: 3, title: "skills", to: "skills" },
   { id: 4, title: "experience", to: "experience" },
   { id: 5, title: "projects", to: "projects" },

@@ -16,14 +16,23 @@ export default function Footer() {
         </p>
       </div>
       <div className="flex gap-4 text-gray-200 items-center lg:justify-center">
-        <a href="" className="border rounded-full p-1 hover:border-primary">
+        <a
+          href="mailto:abraralrawi997@gmail.com"
+          className="border rounded-full p-1 hover:border-primary"
+        >
           <MdEmail size={18} />
         </a>
-        <a href="" className="border rounded-full p-1 hover:border-primary">
-          <BsGithub size={18} />
-        </a>
-        <a href="" className="border rounded-full p-1 hover:border-primary">
+        <a
+          href={`https://api.whatsapp.com/send?phone=9647831190254`}
+          className="border rounded-full p-1 hover:border-primary"
+        >
           <BsTelephone size={16} />
+        </a>
+        <a
+          href="https://github.com/abrar997"
+          className="border rounded-full p-1 hover:border-primary"
+        >
+          <BsGithub size={18} />
         </a>
       </div>
     </div>

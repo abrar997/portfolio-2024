@@ -162,7 +162,7 @@ export default function Home() {
           backgroundImage: "url('/assets/bg.png')",
           backgroundSize: "6px",
         }}
-        className="lg:p-12 grid lg:gap-20 gap-12 p-4"
+        className="lg:p-12 grid lg:gap-20 gap-10 p-4"
       >
         <First />
         <Skills

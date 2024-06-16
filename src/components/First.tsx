@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BiDownload } from "react-icons/bi";
-
 export default function First() {
   const [showFirst, setShowFirst] = useState(true);
 
@@ -41,7 +40,7 @@ export default function First() {
               key={texts[0].id}
               initial={{ y: "-200px" }}
               animate={{ y: 0 }}
-              exit={{ y: "200px" }}
+              // exit={{ y: "200px" }}
               className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
             >
               {SplitText(texts[0].text).map((item, i) => (
@@ -86,13 +85,20 @@ export default function First() {
         accessible, and visually appealing websites.
       </p>
       <div className="flex gap-2 mt-4 lg:text-lg">
-        <button className="border hover:bg-opacity-75 text-[16px] hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none">
+        <a
+          href="mailto:abraralrawi997@gmail.com"
+          className="border hover:bg-opacity-75 text-[16px] hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none"
+        >
           Let&#39;s talk
-        </button>
+        </a>
 
-        <button className="border flex items-center gap-1 text-[16px] hover:bg-opacity-75 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none">
+        <a
+          href="/files/resume.pdf"
+          download="Abrar Muthana Resume"
+          className="border flex items-center gap-1 text-[16px] hover:bg-opacity-75 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none"
+        >
           Resume <BiDownload />
-        </button>
+        </a>
       </div>
     </div>
   );
