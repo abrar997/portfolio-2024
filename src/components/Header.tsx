@@ -1,26 +1,50 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 import { GiButterflyFlower } from "react-icons/gi";
 import { BiMenu } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 
 const menu = [
-  { id: 1, title: "home", ref: "/" },
-  { id: 2, title: "about", ref: "/" },
-  { id: 3, title: "skills", ref: "/" },
-  { id: 4, title: "experience", ref: "/" },
-  { id: 5, title: "gallery", ref: "/" },
-  { id: 6, title: "contact", ref: "/" },
+  { id: 1, title: "home", to: "" },
+  { id: 3, title: "skills", to: "skills" },
+  { id: 4, title: "experience", to: "experience" },
+  { id: 5, title: "projects", to: "projects" },
+  { id: 6, title: "contact us", to: "contact" },
 ];
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isFixed, setISFixed] = useState(false);
+
+  const handleScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 100) {
+      setISFixed(true);
+    } else {
+      setISFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, [isFixed]);
+
   return (
-    <motion.div className="font-primary border-b border-[#8080804e]">
+    <motion.div
+      className={`font-primary border-b border-[#8080804e] ${
+        isFixed
+          ? "fixed top-0 inset-x-0 bg-[#222222] z-50 translate-y-0 transition-all duration-300"
+          : ""
+      }`}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+    >
       <div className="font-secondary  text-main lg:px-12 lg:py-6 p-4 pb-1 flex justify-between items-center">
-        <Link href="/" className="flex text-2xl lg:text-4xl items-start">
+        <Link to="/" className="flex text-2xl lg:text-4xl items-start">
           A
           <GiButterflyFlower className="text-primary lg:text-3xl lg:-ml-0.5" />
         </Link>
@@ -28,8 +52,13 @@ export default function Header() {
           {menu.map((item) => (
             <div key={item.id}>
               <Link
-                href={item.ref}
-                className="capitalize tracking-wide p-1.5 nav-item"
+                to={item.to}
+                duration={300}
+                translate="yes"
+                smooth={true}
+                spy={true}
+                offset={-50}
+                className="capitalize tracking-wide cursor-pointer p-1.5 nav-item"
               >
                 {item.title}
               </Link>
@@ -55,8 +84,14 @@ export default function Header() {
             {menu.map((item) => (
               <div key={item.id}>
                 <Link
-                  href={item.ref}
-                  className="capitalize tracking-wide p-1.5 nav-item"
+                  to={item.to}
+                  duration={300}
+                  translate="yes"
+                  smooth={true}
+                  spy={true}
+                  offset={-20}
+                  onClick={() => setIsOpen(false)}
+                  className="capitalize tracking-wide cursor-pointer p-1 nav-item"
                 >
                   {item.title}
                 </Link>

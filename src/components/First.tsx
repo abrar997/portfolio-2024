@@ -84,11 +84,11 @@ export default function First() {
         accessible, and visually appealing websites.
       </p>
       <div className="flex gap-2 mt-4 lg:text-lg">
-        <button className="border hover:bg-opacity-75 text-[16px] transition-all duration-300 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1">
+        <button className="border hover:bg-opacity-75 text-[16px] hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none">
           Let&#39;s talk
         </button>
 
-        <button className="border flex items-center gap-1 text-[16px] hover:bg-opacity-75 transition-all duration-300 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1">
+        <button className="border flex items-center gap-1 text-[16px] hover:bg-opacity-75 hover:bg-primary hover:text-black text-text bg-main border-primary rounded px-3 py-1 hover:border-none">
           Resume <BiDownload />
         </button>
       </div>

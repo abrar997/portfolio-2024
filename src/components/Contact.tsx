@@ -42,7 +42,7 @@ const inputs = [
 
 export default function Contact() {
   return (
-    <div className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
+    <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
       <Title subtitle="send us a message" title="Contact us" />
       <div className="grid lg:grid-cols-2 lg:gap-12 gap-3">
         <div className="grid lg:gap-8 lg:py-16">

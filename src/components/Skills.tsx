@@ -17,7 +17,10 @@ export default function Skills({ frontend, language, tools }: SkillsProps) {
   const liProps = "flex gap-1 items-center";
 
   return (
-    <div className="lg:bg-[#222222] lg:mx-2 grid gap-3 lg:gap-12 rounded lg:shadow-lg lg:py-12 lg:px-40 overflow-hidden">
+    <div
+      id="skills"
+      className="lg:bg-[#222222] lg:mx-2 grid gap-3 lg:gap-12 rounded lg:shadow-lg lg:py-12 lg:px-40 overflow-hidden"
+    >
       <Title subtitle="what skills i have" title="Skills" />
       <div className="grid lg:grid-cols-3 gap-4 lg:gap-12 lg:items-start overflow-hidden text-text">
         <motion.div
