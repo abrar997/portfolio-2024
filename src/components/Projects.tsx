@@ -34,11 +34,11 @@ export default function Projects(props: ProjectsData) {
               </h1>
               <h2 className="text-text text-sm">{item.skillsUsed}</h2>
             </div>
-            <div className="flex gap-4 text-black">
+            <div className="flex gap-4 text-black items-end">
               <a
                 href={item.demo}
                 target="_blank"
-                className="bg-primary hover:bg-opacity-80 rounded px-4 py-1"
+                className="bg-primary hover:bg-opacity-80 rounded px-4 py-1 flex items-center"
               >
                 Demo
               </a>

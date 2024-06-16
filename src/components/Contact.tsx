@@ -3,54 +3,18 @@ import Title from "./reusable/Title";
 import { GiButterflyFlower } from "react-icons/gi";
 import { BiRightArrow } from "react-icons/bi";
 
-const social = [
-  {
-    id: 1,
-    title: "email",
-    url: "abraralrawi997@gmail.com",
-    text: "abraralrawi997@gmail.com",
-  },
-  { id: 2, title: "phone", url: "9647831190254", text: "+9647831190254" },
-  {
-    id: 3,
-    title: "github",
-    url: "https://github.com/abrar997",
-    text: "Abrar Muthana",
-  },
-];
+interface ContactDataProps {
+  social: { id: number; title: string; url: string; text: string }[];
+  inputs: {
+    id: number;
+    label: string;
+    placeholder: string;
+    type: string;
+    for: string;
+  }[];
+}
 
-const inputs = [
-  {
-    id: 1,
-    label: "first name",
-    placeholder: "Abrar",
-    type: "text",
-    for: "first",
-  },
-  {
-    id: 2,
-    label: "last name",
-    placeholder: "Muthana",
-    type: "text",
-    for: "last",
-  },
-  {
-    id: 3,
-    label: "Email",
-    placeholder: "abraralrawi997@gmail.com",
-    type: "email",
-    for: "email",
-  },
-  {
-    id: 4,
-    label: "message",
-    placeholder: "Hello Abrar '-' , ",
-    type: "textarea",
-    for: "message",
-  },
-];
-
-export default function Contact() {
+export default function Contact({ social, inputs }: ContactDataProps) {
   return (
     <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
       <Title subtitle="send us a message" title="Contact us" />
