@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Title from "./reusable/Title";
 import { GiButterflyFlower } from "react-icons/gi";
 import { BiRightArrow } from "react-icons/bi";
-
+import axios from "axios";
 interface ContactDataProps {
   social: { id: number; title: string; url: string; text: string }[];
   inputs: {
@@ -15,6 +15,19 @@ interface ContactDataProps {
 }
 
 export default function Contact({ social, inputs }: ContactDataProps) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async () => {
+    await axios.post("/api/email", {
+      firstName,
+      lastName,
+      email,
+      message,
+    });
+  };
   return (
     <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
       <Title subtitle="send us a message" title="Contact us" />
@@ -77,7 +90,7 @@ export default function Contact({ social, inputs }: ContactDataProps) {
         </div>
         {inputs && (
           <form
-            action=""
+            onSubmit={(e) => e.preventDefault()}
             className="border lg:p-4 px-2 py-4 bg-main grid grid-cols-2 gap-5 shadow rounded border-gray-500"
           >
             {inputs.map((input) => (
@@ -97,17 +110,36 @@ export default function Contact({ social, inputs }: ContactDataProps) {
                     placeholder={input.placeholder}
                     rows={3}
                     className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
+                    name={message}
+                    onChange={(e) => setMessage(e.target.value)}
                   />
                 ) : (
                   <input
                     type={input.type}
+                    name={
+                      (input.for === "first" ? firstName : "") &&
+                      (input.for === "last" ? lastName : "") &&
+                      (input.for === "email" ? email : "")
+                    }
+                    onChange={(e) => {
+                      if (input.for === "first") {
+                        setFirstName(e.target.value);
+                      } else if (input.for === "last") {
+                        setLastName(e.target.value);
+                      } else if (input.for === "email") {
+                        setEmail(e.target.value);
+                      }
+                    }}
                     className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
                     placeholder={input.placeholder}
                   />
                 )}
               </div>
             ))}
-            <button className="text-black bg-primary col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
+            <button
+              onClick={handleSubmit}
+              className="text-black bg-primary col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center"
+            >
               <BiRightArrow />
               <span>
                 <GiButterflyFlower className="lg:text-xl" />

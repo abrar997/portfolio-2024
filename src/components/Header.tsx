@@ -33,9 +33,9 @@ export default function Header() {
 
   return (
     <motion.div
-      className={`font-primary border-b border-[#8080804e] ${
+      className={`font-primary  border-[#8080804e] ${
         isFixed
-          ? "fixed top-0 inset-x-0 bg-[#222222] z-50 translate-y-0 transition-all duration-300"
+          ? "fixed top-0 inset-x-0 bg-[#222222] border-b z-50 translate-y-0 transition-all duration-300"
           : ""
       }`}
     >
