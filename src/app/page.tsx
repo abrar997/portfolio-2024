@@ -1,3 +1,4 @@
+"use client";
 import Contact from "@/components/Contact";
 import Experience from "@/components/Experience";
 import First from "@/components/First";
@@ -5,8 +6,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
-import { HiArrowLongUp } from "react-icons/hi2";
-import { TiArrowUpOutline } from "react-icons/ti";
 
 const SkillsData = {
   FrontEnd: [
@@ -174,11 +173,6 @@ export default function Home() {
         <Experience data={experienceData} />
         <Projects data={projects} />
         <Contact />
-      </div>
-      <div>
-        <button className="bg-[#3b3b3b] rounded-full text-primary p-2 fixed z-40 right-10 bottom-12 shadow-xl">
-          <TiArrowUpOutline size={20} />
-        </button>
       </div>
 
       <Footer />

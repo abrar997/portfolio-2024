@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Title from "./reusable/Title";
 import { BsDash, BsDot, BsFlower3, BsLink } from "react-icons/bs";

@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { GiButterflyFlower } from "react-icons/gi";
@@ -39,11 +38,12 @@ export default function Header() {
           ? "fixed top-0 inset-x-0 bg-[#222222] z-50 translate-y-0 transition-all duration-300"
           : ""
       }`}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <div className="font-secondary  text-main lg:px-12 lg:py-6 p-4 pb-1 flex justify-between items-center">
+      <div
+        className={`font-secondary  text-main lg:px-12 ${
+          isFixed ? "lg:py-4" : "lg:py-6"
+        }  p-4 pb-1 flex justify-between items-center`}
+      >
         <Link to="/" className="flex text-2xl lg:text-4xl items-start">
           A
           <GiButterflyFlower className="text-primary lg:text-3xl lg:-ml-0.5" />
@@ -57,7 +57,7 @@ export default function Header() {
                 translate="yes"
                 smooth={true}
                 spy={true}
-                offset={-50}
+                offset={-100}
                 className="capitalize tracking-wide cursor-pointer p-1.5 nav-item"
               >
                 {item.title}
@@ -89,7 +89,7 @@ export default function Header() {
                   translate="yes"
                   smooth={true}
                   spy={true}
-                  offset={-20}
+                  offset={-70}
                   onClick={() => setIsOpen(false)}
                   className="capitalize tracking-wide cursor-pointer p-1 nav-item"
                 >
