@@ -27,10 +27,7 @@ export default function Home() {
         />
         <Experience data={DataComponents.experienceData} />
         <Projects data={DataComponents.projects} />
-        <Contact
-          social={DataComponents.contact.social}
-          inputs={DataComponents.contact.inputs}
-        />
+        <Contact ContactDataProps={DataComponents.contact} />
       </div>
       <Footer />
     </div>

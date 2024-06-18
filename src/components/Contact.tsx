@@ -1,34 +1,68 @@
-import React, { useState } from "react";
+import React, { HTMLInputTypeAttribute, useState } from "react";
 import Title from "./reusable/Title";
 import { GiButterflyFlower } from "react-icons/gi";
 import { BiRightArrow } from "react-icons/bi";
 import axios from "axios";
+import { useForm } from "react-hook-form";
+import InputText from "./contactComponents/InputText";
+import TextArea from "./contactComponents/TextArea";
 
-interface ContactDataProps {
-  social: { id: number; title: string; url: string; text: string }[];
-  inputs: {
-    id: number;
-    label: string;
-    placeholder: string;
-    type: string;
-    for: string;
-  }[];
+interface Social {
+  id: number;
+  title: string;
+  url: string;
+  text: string;
 }
 
-export default function Contact({ social, inputs }: ContactDataProps) {
+interface InputsData {
+  id: number;
+  label: string;
+  placeholder: string;
+  type: string;
+  for: string;
+}
+
+interface ContactDataProps {
+  social: Social[];
+  inputs: InputsData[];
+}
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+}
+
+interface ContactProps {
+  ContactDataProps: ContactDataProps;
+}
+
+export default function Contact({ ContactDataProps }: ContactProps) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async () => {
-    await axios.post("/api/email", {
-      firstName,
-      lastName,
-      email,
-      message,
-    });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const onSubmit = async () => {
+    try {
+      await axios.post("/api/email", {
+        firstName,
+        lastName,
+        email,
+        message,
+      });
+    } catch (error) {
+      console.log("there is issue with axios post data");
+    }
   };
+
   return (
     <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
       <Title subtitle="send us a message" title="Contact us" />
@@ -47,8 +81,8 @@ export default function Contact({ social, inputs }: ContactDataProps) {
             <span className="hidden lg:flex">
               <GiButterflyFlower className="lg:text-5xl text-primary" />
             </span>
-            <ul className="grid gap-2 text-sm">
-              {social.map((item) => (
+            <ul className="flex flex-col gap-2 text-sm">
+              {ContactDataProps.social.map((item) => (
                 <li key={item.id} className="grid">
                   {item.title === "email" && (
                     <a
@@ -89,12 +123,12 @@ export default function Contact({ social, inputs }: ContactDataProps) {
             </ul>
           </div>
         </div>
-        {inputs && (
+        {ContactDataProps.inputs && (
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit(onSubmit)}
             className="border lg:p-4 px-2 py-4 bg-main grid grid-cols-2 gap-5 shadow rounded border-gray-500"
           >
-            {inputs.map((input) => (
+            {ContactDataProps.inputs.map((input) => (
               <div
                 key={input.id}
                 className={`flex flex-col gap-1 ${
@@ -103,42 +137,37 @@ export default function Contact({ social, inputs }: ContactDataProps) {
                     : "lg:col-span-1 col-span-2"
                 }`}
               >
-                <label htmlFor={input.for} className="capitalize">
-                  {input.label}
-                </label>
-                {input.type === "textarea" ? (
-                  <textarea
+                {input.label === "message" ? (
+                  <TextArea
+                    label={input.label}
+                    name={input.for}
+                    register={register}
+                    type={input.type}
+                    errors={errors}
+                    required={{
+                      value: true,
+                      message: `${input.label} is required`,
+                    }}
                     placeholder={input.placeholder}
-                    rows={3}
-                    className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
-                    name={message}
-                    onChange={(e) => setMessage(e.target.value)}
                   />
                 ) : (
-                  <input
+                  <InputText
+                    label={input.label}
+                    name={input.for}
+                    register={register}
                     type={input.type}
-                    name={
-                      (input.for === "first" ? firstName : "") &&
-                      (input.for === "last" ? lastName : "") &&
-                      (input.for === "email" ? email : "")
-                    }
-                    onChange={(e) => {
-                      if (input.for === "first") {
-                        setFirstName(e.target.value);
-                      } else if (input.for === "last") {
-                        setLastName(e.target.value);
-                      } else if (input.for === "email") {
-                        setEmail(e.target.value);
-                      }
+                    errors={errors}
+                    required={{
+                      value: true,
+                      message: `${input.label} is required`,
                     }}
-                    className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
                     placeholder={input.placeholder}
                   />
                 )}
               </div>
             ))}
             <button
-              onClick={handleSubmit}
+              // onClick={handleSubmit}
               className="text-black bg-primary col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center"
             >
               <BiRightArrow />
