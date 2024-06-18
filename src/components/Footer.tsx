@@ -1,5 +1,5 @@
 import React from "react";
-import { BsGithub, BsHeartFill, BsTelephone } from "react-icons/bs";
+import { BsGithub, BsTelephone } from "react-icons/bs";
 import { HiHeart } from "react-icons/hi";
 import { MdEmail } from "react-icons/md";
 

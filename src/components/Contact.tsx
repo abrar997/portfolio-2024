@@ -3,6 +3,7 @@ import Title from "./reusable/Title";
 import { GiButterflyFlower } from "react-icons/gi";
 import { BiRightArrow } from "react-icons/bi";
 import axios from "axios";
+
 interface ContactDataProps {
   social: { id: number; title: string; url: string; text: string }[];
   inputs: {

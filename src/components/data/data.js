@@ -1,4 +1,11 @@
 const DataComponents = {
+  menu: [
+    { id: 1, title: "home", to: "/" },
+    { id: 3, title: "skills", to: "skills" },
+    { id: 4, title: "experience", to: "experience" },
+    { id: 5, title: "projects", to: "projects" },
+    { id: 6, title: "contact us", to: "contact" },
+  ],
   skillsData: {
     frontend: [
       { id: 1, name: "React JS" },

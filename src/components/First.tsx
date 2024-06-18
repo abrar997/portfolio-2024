@@ -1,18 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BiDownload } from "react-icons/bi";
+
 export default function First() {
   const [showFirst, setShowFirst] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowFirst(false), 4000);
-    const returnTimer = setTimeout(() => setShowFirst(true), 10000);
-    return () => {
-      clearTimeout(timer);
-      clearTimeout(returnTimer);
-    };
-  }, []);
-
   const texts = [
     { id: 1, text: "Abrar Muthana Rakea" },
     { id: 2, text: "Frontend Web Developer" },
@@ -24,6 +15,15 @@ export default function First() {
       .flatMap((word, index, array) =>
         index < array.length - 1 ? [...word.split(""), " "] : word.split("")
       );
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowFirst(false), 4000);
+    const returnTimer = setTimeout(() => setShowFirst(true), 10000);
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(returnTimer);
+    };
+  }, []);
 
   return (
     <div

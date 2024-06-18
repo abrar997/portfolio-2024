@@ -11,7 +11,7 @@ import DataComponents from "../components/data/data";
 export default function Home() {
   return (
     <div className="bg-main text-main font-sans">
-      <Header />
+      <Header menu={DataComponents.menu} />
       <div
         style={{
           backgroundImage: "url('/assets/bg.png')",

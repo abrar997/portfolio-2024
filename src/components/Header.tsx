@@ -5,15 +5,11 @@ import { BiMenu } from "react-icons/bi";
 import { AnimatePresence, motion } from "framer-motion";
 import { CgClose } from "react-icons/cg";
 
-const menu = [
-  { id: 1, title: "home", to: "/" },
-  { id: 3, title: "skills", to: "skills" },
-  { id: 4, title: "experience", to: "experience" },
-  { id: 5, title: "projects", to: "projects" },
-  { id: 6, title: "contact us", to: "contact" },
-];
+type HeaderProps = {
+  menu: { id: number; title: string; to: string }[];
+};
 
-export default function Header() {
+export default function Header({ menu }: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [isFixed, setISFixed] = useState(false);
 
@@ -44,7 +40,10 @@ export default function Header() {
           isFixed ? "lg:py-4" : "lg:py-6"
         }  p-4 pb-1 flex justify-between items-center`}
       >
-        <Link to="/" className="flex text-2xl lg:text-4xl items-start">
+        <Link
+          to="/"
+          className="flex text-2xl lg:text-4xl items-start cursor-pointer"
+        >
           A
           <GiButterflyFlower className="text-primary lg:text-3xl lg:-ml-0.5" />
         </Link>
@@ -57,7 +56,7 @@ export default function Header() {
                 translate="yes"
                 smooth={true}
                 spy={true}
-                offset={-100}
+                offset={-150}
                 className="capitalize tracking-wide cursor-pointer p-1.5 nav-item"
               >
                 {item.title}
