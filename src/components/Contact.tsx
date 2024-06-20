@@ -1,11 +1,10 @@
-import React, { HTMLInputTypeAttribute, useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Title from "./reusable/Title";
 import { GiButterflyFlower } from "react-icons/gi";
 import { BiRightArrow } from "react-icons/bi";
-import axios from "axios";
-import { useForm } from "react-hook-form";
-import InputText from "./contactComponents/InputText";
-import TextArea from "./contactComponents/TextArea";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface Social {
   id: number;
@@ -14,23 +13,8 @@ interface Social {
   text: string;
 }
 
-interface InputsData {
-  id: number;
-  label: string;
-  placeholder: string;
-  type: string;
-  for: string;
-}
-
 interface ContactDataProps {
   social: Social[];
-  inputs: InputsData[];
-}
-interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  message: string;
 }
 
 interface ContactProps {
@@ -38,26 +22,29 @@ interface ContactProps {
 }
 
 export default function Contact({ ContactDataProps }: ContactProps) {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSend, setIsSend] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm<FormData>();
-
-  const onSubmit = async () => {
+  const onSubmit = async (e: any) => {
+    e.preventDefault();
     try {
       await axios.post("/api/email", {
-        firstName,
-        lastName,
+        name,
+        phone,
         email,
         message,
       });
+      setIsSend(true);
+      toast("We will connect with you within 48 hours", {
+        className: "bg-transparent",
+      });
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
     } catch (error) {
       console.log("there is issue with axios post data");
     }
@@ -123,61 +110,83 @@ export default function Contact({ ContactDataProps }: ContactProps) {
             </ul>
           </div>
         </div>
-        {ContactDataProps.inputs && (
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="border lg:p-4 px-2 py-4 bg-main grid grid-cols-2 gap-5 shadow rounded border-gray-500"
-          >
-            {ContactDataProps.inputs.map((input) => (
-              <div
-                key={input.id}
-                className={`flex flex-col gap-1 ${
-                  input.type === "textarea" || input.type === "email"
-                    ? "col-span-2"
-                    : "lg:col-span-1 col-span-2"
-                }`}
-              >
-                {input.label === "message" ? (
-                  <TextArea
-                    label={input.label}
-                    name={input.for}
-                    register={register}
-                    type={input.type}
-                    errors={errors}
-                    required={{
-                      value: true,
-                      message: `${input.label} is required`,
-                    }}
-                    placeholder={input.placeholder}
-                  />
-                ) : (
-                  <InputText
-                    label={input.label}
-                    name={input.for}
-                    register={register}
-                    type={input.type}
-                    errors={errors}
-                    required={{
-                      value: true,
-                      message: `${input.label} is required`,
-                    }}
-                    placeholder={input.placeholder}
-                  />
-                )}
-              </div>
-            ))}
-            <button
-              // onClick={handleSubmit}
-              className="text-black bg-primary col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center"
-            >
-              <BiRightArrow />
-              <span>
-                <GiButterflyFlower className="lg:text-xl" />
-              </span>
-            </button>
-          </form>
-        )}
+        <form
+          onSubmit={onSubmit}
+          className="border lg:p-4 px-2 py-4 bg-main flex flex-col gap-5 shadow rounded border-gray-500"
+        >
+          <div className="grid w-full">
+            <label htmlFor={name}>Name</label>
+            <input
+              type="text"
+              name={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="name"
+              className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
+            />
+          </div>
+          <div className="grid w-full">
+            <label htmlFor={email}>Email</label>
+
+            <input
+              type="email"
+              name={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="abraralrawi997@gmail.com"
+              className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
+            />
+          </div>
+          <div className="grid w-full">
+            <label htmlFor={phone}>Phone</label>
+
+            <input
+              type="phone"
+              name={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="123456789"
+              className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
+            />
+          </div>
+          <div className="grid w-full">
+            <label htmlFor={message}>message</label>
+            <textarea
+              name={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={4}
+              placeholder="hello abrar '-' "
+              className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
+            />
+          </div>
+          <button className="text-black bg-primary col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
+            <BiRightArrow />
+            <span>
+              <GiButterflyFlower className="lg:text-xl" />
+            </span>
+          </button>
+        </form>
       </div>
+      {isSend && (
+        <div>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            progressStyle={{ backgroundColor: "#eee" }}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            transition={Bounce}
+            theme="dark"
+            closeButton={true}
+            bodyClassName={() =>
+              "rounded-lg text-teal-500 w-[400px] font-semibold p-2 flex items-center justify-center"
+            }
+            className="bg-[#222222]"
+          />
+        </div>
+      )}
     </div>
   );
 }

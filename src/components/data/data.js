@@ -169,27 +169,20 @@ const DataComponents = {
     inputs: [
       {
         id: 1,
-        label: "first name",
-        placeholder: "Abrar",
+        label: "name",
+        placeholder: "Muthana",
         type: "text",
-        for: "firstName",
+        for: "name",
       },
       {
         id: 2,
-        label: "last name",
-        placeholder: "Muthana",
-        type: "text",
-        for: "lastName",
-      },
-      {
-        id: 3,
         label: "email",
         placeholder: "abraralrawi997@gmail.com",
         type: "email",
         for: "email",
       },
       {
-        id: 4,
+        id: 3,
         label: "message",
         placeholder: "Hello Abrar '-' , ",
         type: "textarea",
