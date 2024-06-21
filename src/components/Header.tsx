@@ -88,7 +88,7 @@ export default function Header({ menu }: HeaderProps) {
                   translate="yes"
                   smooth={true}
                   spy={true}
-                  offset={-70}
+                  offset={-130}
                   onClick={() => setIsOpen(false)}
                   className="capitalize tracking-wide cursor-pointer p-1 nav-item"
                 >

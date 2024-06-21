@@ -63,7 +63,7 @@ const DataComponents = {
       city: "Manila",
       job: "Frontend",
       type: "remotely",
-      date: "2022-Aug / 2023-Nov",
+      date: "2023-Des / 2024-Mar",
       responsibilities: [
         {
           id: 1,
@@ -83,7 +83,7 @@ const DataComponents = {
       city: "New York",
       job: "Frontend",
       type: "remotely",
-      date: "2022-Aug / 2023-Nov",
+      date: "2024-Feb",
       link: "https://www.accommodation.network/",
       responsibilities: [
         {

@@ -157,7 +157,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
             />
           </div>
           <div className="grid w-full">
-            <label htmlFor={message}>message</label>
+            <label htmlFor={message}>Message</label>
             <textarea
               name={message}
               onChange={(e) => setMessage(e.target.value)}
