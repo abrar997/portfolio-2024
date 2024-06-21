@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Title from "./reusable/Title";
 import { GiButterflyFlower } from "react-icons/gi";
-import { BiRightArrow } from "react-icons/bi";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -38,17 +37,23 @@ export default function Contact({ ContactDataProps }: ContactProps) {
         message,
       });
       setIsSend(true);
-      toast("We will connect with you within 48 hours", {
+      toast("We will connect with you since 48 hours", {
         className: "bg-transparent",
       });
-      setName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
     } catch (error) {
       console.log("there is issue with axios post data");
     }
   };
+
+  useEffect(() => {
+    if (isSend) {
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+      setIsSend(false);
+    }
+  }, [isSend]);
 
   return (
     <div id="contact" className="grid gap-3 lg:gap-12 lg:pb-16 pb-6">
@@ -122,6 +127,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
               onChange={(e) => setName(e.target.value)}
               placeholder="name"
               className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
+              value={name}
             />
           </div>
           <div className="grid w-full">
@@ -130,8 +136,11 @@ export default function Contact({ ContactDataProps }: ContactProps) {
             <input
               type="email"
               name={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               placeholder="abraralrawi997@gmail.com"
+              value={email}
               className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
             />
           </div>
@@ -141,6 +150,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
             <input
               type="phone"
               name={phone}
+              value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="123456789"
               className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
@@ -152,41 +162,40 @@ export default function Contact({ ContactDataProps }: ContactProps) {
               name={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={4}
+              value={message}
               placeholder="hello abrar '-' "
               className="bg-transparent placeholder:text-[12px] p-2 placeholder:text-gray-600 text-sm rounded border border-gray-600 focus-within:outline-none"
             />
           </div>
-          <button className="text-black bg-primary col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
-            <BiRightArrow />
+          <button className="bg-teal-500 text-black hover:border border border-slate-600 gap-1 col-span-2 rounded px-4 py-2 ml-auto hover:bg-opacity-75 transition-all duration-300 flex items-center justify-center">
+            send
             <span>
               <GiButterflyFlower className="lg:text-xl" />
             </span>
           </button>
         </form>
       </div>
-      {isSend && (
-        <div>
-          <ToastContainer
-            position="bottom-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            progressStyle={{ backgroundColor: "#eee" }}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            transition={Bounce}
-            theme="dark"
-            closeButton={true}
-            bodyClassName={() =>
-              "rounded-lg text-teal-500 w-[400px] font-semibold p-2 flex items-center justify-center"
-            }
-            className="bg-[#222222]"
-          />
-        </div>
-      )}
+      <div>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          progressStyle={{ backgroundColor: "#eee" }}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          transition={Bounce}
+          theme="dark"
+          closeButton={true}
+          bodyClassName={() =>
+            "rounded-lg text-teal-300 lg:w-[450px] p-2 flex items-center justify-center"
+          }
+          className="bg-[#222222]"
+        />
+      </div>
     </div>
   );
 }
