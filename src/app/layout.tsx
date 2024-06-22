@@ -4,6 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Abrar Muthana Rakea",
   description: "Frontend web developer",
+  icons: "assets/me.jpg",
 };
 
 export default function RootLayout({
