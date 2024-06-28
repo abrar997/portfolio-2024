@@ -79,8 +79,8 @@ export default function First() {
         </AnimatePresence>
       </div>
       <p className="text-text lg:text-[16px] text-sm lg:w-[60%]">
-        I have experience over 2 years and i specialize in HTML, CSS, and
-        JavaScript, I&#39;m proficient with frameworks like React with
+        I have experience over 2 years and 6 months and i specialize in HTML,
+        CSS, and JavaScript, I&#39;m proficient with frameworks like React with
         typescript and JavaScript. My focus is on building user-friendly,
         accessible, and visually appealing websites.
       </p>
