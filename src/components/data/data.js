@@ -102,6 +102,14 @@ const DataComponents = {
   projects: [
     {
       id: 1,
+      title: "Ecommerce for shopping",
+      url: "./assets/ecom.png",
+      skillsUsed: "HTML , CSS,JS , tailwind css , Swiper js",
+      github: "https://github.com/abrar997/ecommerce-js",
+      demo: "https://ecommerce-js-vt44.vercel.app/",
+    },
+    {
+      id: 2,
       title: "3D Portfolio",
       url: "./assets/port.png",
       skillsUsed: "Next js , babylon js , tailwind css , typescript",
@@ -109,7 +117,7 @@ const DataComponents = {
       demo: "https://3d-first.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "FA nursery",
       url: "./assets/FA.png",
       skillsUsed:
@@ -118,7 +126,7 @@ const DataComponents = {
       demo: "https://3d-project2.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "Restaurant",
       url: "./assets/rest.png",
       skillsUsed: "React js , css , react-snippers",
@@ -126,7 +134,7 @@ const DataComponents = {
       demo: "https://sweet-praline-474c1a.netlify.app/#home",
     },
     {
-      id: 4,
+      id: 5,
       title: "Accommodation Network",
       url: "./assets/tech.png",
       skillsUsed:
@@ -134,21 +142,21 @@ const DataComponents = {
       demo: "https://www.accommodation.network/",
     },
     {
-      id: 5,
+      id: 6,
       title: "Portfolio",
       url: "./assets/port2.png",
       skillsUsed: "React js , css , tailwind css , framer-motion , ",
       github: "https://github.com/abrar997/test",
       demo: "https://test-abrar997.vercel.app/",
     },
-    {
-      id: 6,
-      title: "Admin dashboard template",
-      url: "./assets/admin.png",
-      skillsUsed: "React js , axios , firebase , bootstrap5",
-      github: "https://github.com/abrar997/Admin-dashboard-MEE",
-      demo: "https://funny-maamoul-5e654c.netlify.app/",
-    },
+    // {
+    //   id: 7,
+    //   title: "Admin dashboard template",
+    //   url: "./assets/admin.png",
+    //   skillsUsed: "React js , axios , firebase , bootstrap5",
+    //   github: "https://github.com/abrar997/Admin-dashboard-MEE",
+    //   demo: "https://funny-maamoul-5e654c.netlify.app/",
+    // },
   ],
   contact: {
     social: [

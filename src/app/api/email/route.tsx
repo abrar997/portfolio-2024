@@ -6,7 +6,7 @@ const resend = new Resend(process.env.RESEND_KEY);
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
-    const result = await resend.emails.send({
+    await resend.emails.send({
       from: "Customer <abrarcustomer@resend.dev>",
       to: ["abraralrawi997@gmail.com"],
       subject: "New customer Request from  -- " + data.name + "--",
@@ -18,7 +18,6 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    console.log("Email sent:", result);
     return NextResponse.json({ message: "Message sent successfully", data });
   } catch (error) {
     console.error("Error sending email:", error);
