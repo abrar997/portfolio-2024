@@ -37,7 +37,7 @@ export default function Contact({ ContactDataProps }: ContactProps) {
         message,
       });
       setIsSend(true);
-      toast("We will connect with you since 48 hours", {
+      toast("We will contact you within 48 hours", { 
         className: "bg-transparent",
       });
     } catch (error) {
