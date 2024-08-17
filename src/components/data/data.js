@@ -102,14 +102,22 @@ const DataComponents = {
   projects: [
     {
       id: 1,
-      title: "Ecommerce for shopping",
+      title: "Todo App",
+      url: "./assets/crud.png",
+      skillsUsed: "HTML , CSS , JS",
+      github: "https://github.com/abrar997/crud",
+      demo: "https://crud-delta-tawny.vercel.app/",
+    },
+    {
+      id: 2,
+      title: "Template Ecommerce for shopping",
       url: "./assets/ecom.png",
       skillsUsed: "HTML , CSS,JS , tailwind css , Swiper js",
       github: "https://github.com/abrar997/ecommerce-js",
       demo: "https://ecommerce-js-vt44.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "3D Portfolio",
       url: "./assets/port.png",
       skillsUsed: "Next js , babylon js , tailwind css , typescript",
@@ -117,22 +125,15 @@ const DataComponents = {
       demo: "https://3d-first.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       title: "FA nursery",
       url: "./assets/FA.png",
       skillsUsed:
-        "Next js , Babylon js , tailwind css , typescript,Framer-motion",
+        "Next js , Babylon js , tailwind css , Typescript , Framer-motion",
       github: "https://github.com/abrar997/3d-project2",
       demo: "https://3d-project2.vercel.app/",
     },
-    {
-      id: 4,
-      title: "Restaurant",
-      url: "./assets/rest.png",
-      skillsUsed: "React js , css , react-snippers",
-      github: "https://github.com/abrar997/RESTURANT-ME",
-      demo: "https://sweet-praline-474c1a.netlify.app/#home",
-    },
+
     {
       id: 5,
       title: "Accommodation Network",

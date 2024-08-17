@@ -16,7 +16,7 @@ interface ProjectsData {
 export default function Projects(props: ProjectsData) {
   return (
     <div id="projects" className="grid gap-3 lg:gap-12">
-      <Title subtitle="welcome in my gallery" title="Projects" />
+      <Title subtitle="welcome in my gallery" title="Projects" isGallery />
       <div className="grid lg:grid-cols-3 lg:gap-6 gap-4 lg:px-4">
         {props.data.map((item, i) => (
           <motion.div

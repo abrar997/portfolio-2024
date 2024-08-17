@@ -5,9 +5,10 @@ import { motion } from "framer-motion";
 interface TextProps {
   subtitle?: string;
   title?: string;
+  isGallery?: true;
 }
 
-export default function Title({ title, subtitle }: TextProps) {
+export default function Title({ title, subtitle, isGallery }: TextProps) {
   return (
     <motion.div
       initial={{ y: -40 }}
@@ -20,6 +21,11 @@ export default function Title({ title, subtitle }: TextProps) {
         <GiButterflyFlower className="lg:text-xl lg:-ml-0.5" />
       </h1>
       <h3 className="text-text text-sm">{subtitle} .</h3>
+      {isGallery && (
+        <p className="text-gray-500 lg:text-sm text-[10px]">
+      <span className='text-primary'>!!</span>  If Babylon.js is among the libraries used in project, it means the project needs a few extra seconds to load.The result is worth your wait :)
+        </p>
+      )}  
     </motion.div>
   );
-}
+} 
