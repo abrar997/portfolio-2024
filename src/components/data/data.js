@@ -8,7 +8,11 @@ const DataComponents = {
   ],
   skillsData: {
     frontend: [
-      { id: 1, name: "React JS" },
+      { id: 1, name: "HTML,HTML5" },
+      { id: 13, name: "CSS,CSS3" },
+      { id: 14, name: "Java script" },
+      { id: 15, name: "Typescript" },
+      { id: 16, name: "React JS" },
       { id: 2, name: "Next JS" },
       { id: 3, name: "Context API" },
       { id: 4, name: "Redux" },
@@ -22,10 +26,8 @@ const DataComponents = {
       { id: 12, name: "clsx" },
     ],
     language: [
-      { id: 1, name: "HTML,HTML5" },
-      { id: 2, name: "CSS,CSS3" },
-      { id: 3, name: "Java script" },
-      { id: 4, name: "Typescript" },
+      { id: 1, name: "Java script" },
+      { id: 2, name: "Typescript" },
     ],
     tools: [
       { id: 1, name: "Github" },
