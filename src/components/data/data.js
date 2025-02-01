@@ -109,19 +109,28 @@ const DataComponents = {
   projects: [
     {
       id: 1,
-      title: "Furniture Ecommerrece",
-      url: "./assets/furniture.png",
-      skillsUsed: "HTML , CSS , JS , Tailwind css",
-      github: "https://github.com/abrar997/furniture-ecom.git",
-      demo: "https://abrar997.github.io/furniture-ecom/register.html",
-    },
-    {
-      id: 2,
       title: "Accommodation Network",
       url: "./assets/tech.png",
       skillsUsed:
         "Next js ,tailwind css , typescript , framer-motion , headless UI , react-scroll , react-spinners",
       demo: "https://www.accommodation.network/",
+    },
+    {
+      id: 2,
+      title: "Ecommerrece",
+      url: "./assets/ecom1.png",
+      skillsUsed:
+        "React js , Tailwind css , swiper js , react-scroll , react-scroll",
+      github: "https://github.com/abrar997/ecom-4.git",
+      demo: "https://ecom-4.vercel.app/",
+    },
+    {
+      id: 2,
+      title: "Furniture Ecommerrece",
+      url: "./assets/furniture.png",
+      skillsUsed: "HTML , CSS , JS , Tailwind css",
+      github: "https://github.com/abrar997/furniture-ecom.git",
+      demo: "https://abrar997.github.io/furniture-ecom/register.html",
     },
     {
       id: 3,
@@ -130,6 +139,14 @@ const DataComponents = {
       skillsUsed: "HTML , CSS , JS",
       github: "https://github.com/abrar997/crud",
       demo: "https://crud-delta-tawny.vercel.app/",
+    },
+    {
+      id: 4,
+      title: "Weather App",
+      url: "./assets/weather.png",
+      skillsUsed: "React js , Tailwind css , react-icons ",
+      github: "https://github.com/abrar997/weather-task.git",
+      demo: "https://abrar997.github.io/weather-task/",
     },
     {
       id: 4,

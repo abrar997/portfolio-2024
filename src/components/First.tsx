@@ -40,7 +40,6 @@ export default function First() {
               key={texts[0].id}
               initial={{ y: "-200px" }}
               animate={{ y: 0 }}
-              // exit={{ y: "200px" }}
               className="text-[28px] lg:text-6xl font-bold font-main font-secondary text-primary flex overflow-hidden col-span-5"
             >
               {SplitText(texts[0].text).map((item, i) => (
@@ -78,16 +77,7 @@ export default function First() {
           )}
         </AnimatePresence>
       </div>
-      <p className="text-gray-400 leading-6 lg:text-[16px] text-sm lg:w-[60%]">
-        I am a passionate and detail-oriented Frontend Developer with a strong
-        foundation in web technologies like HTML, CSS, and JavaScript. With 1
-        year and 6 months of experience at Techboom and over three years as a
-        self-taught developer and freelancer, I specialize in building
-        responsive, user-centered websites and applications using modern
-        frameworks such as React.js and Next.js. My focus is on creating
-        seamless, intuitive user experiences that meet the needs of both clients
-        and end users.
-      </p>
+
       <div className="flex gap-2 mt-4 lg:text-lg">
         <a
           href="mailto:abraralrawi997@gmail.com"
