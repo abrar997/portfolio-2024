@@ -117,7 +117,7 @@ const DataComponents = {
     },
     {
       id: 2,
-      title: "Ecommerrece",
+      title: "E-commerce",
       url: "./assets/ecom1.png",
       skillsUsed:
         "React js , Tailwind css , swiper js , react-scroll , react-scroll",
@@ -126,7 +126,7 @@ const DataComponents = {
     },
     {
       id: 2,
-      title: "Furniture Ecommerrece",
+      title: "Furniture E-commerce",
       url: "./assets/furniture.png",
       skillsUsed: "HTML , CSS , JS , Tailwind css",
       github: "https://github.com/abrar997/furniture-ecom.git",
